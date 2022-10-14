@@ -1,24 +1,24 @@
-require_relative '../solver.rb'
+require_relative '../solver'
 
 describe Solver do
   context '#initialize' do
-   it 'creates a new instance of the Solver class' do
+    it 'creates a new instance of the Solver class' do
       solver = Solver.new
       expect(solver).to be_instance_of Solver
     end
   end
   context '#factorial' do
-    it 'retuns n factorial for positive integers' do
+    it 'returns n factorial for positive integers' do
       solver = Solver.new
       expect(solver.factorial(4)).to eq(24)
     end
-     it 'retuns 1 is 0 is passed as an argument' do
+    it 'returns 1 is 0 is passed as an argument' do
       num = Solver.new
-     expect(solver.factorial(0)).to eq(1)
+      expect(num.factorial(0)).to eq(1)
     end
-     it 'raises an ArgumentError if a negative value is given' do
-      num = Solver.new
-      expect{solver.factorial(-3)}.to raise_error(ArgumentError)
+    it 'raises an ArgumentError if a negative value is given' do
+      solver = Solver.new
+      expect { solver.factorial(-3) }.to raise_error(ArgumentError)
     end
   end
   context '#reverse' do
